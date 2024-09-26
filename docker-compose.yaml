@@ -1,0 +1,17 @@
+version: '2.17.3'
+services: 
+  opencv:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    image: centroids-viewer
+    ports:
+      - 5000:5000
+    volumes:
+      - ./server.py:/server.py
+      - ./mainModule.py:/mainModule.py
+      - ./Modules:/Modules
+      - ./utils:/utils
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1

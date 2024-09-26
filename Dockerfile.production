@@ -1,0 +1,8 @@
+FROM public.ecr.aws/lambda/python:3.10
+COPY requirements.txt ${LAMBDA_TASK_ROOT}
+COPY lambda_handler.py ${LAMBDA_TASK_ROOT}
+COPY mainModule.py ${LAMBDA_TASK_ROOT}
+COPY modules ${LAMBDA_TASK_ROOT}/modules
+COPY utils ${LAMBDA_TASK_ROOT}/utils
+RUN pip install -r ${LAMBDA_TASK_ROOT}/requirements.txt --target "${LAMBDA_TASK_ROOT}"
+CMD ["lambda_handler.lambda_handler"]

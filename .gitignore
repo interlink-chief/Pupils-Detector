@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# os 
+.DS_Store
+.DS_Store?
+
+# other
+.idea/
+bin/
+etc/
+include/
+lib/
+share/
+pyvenv.cfg
